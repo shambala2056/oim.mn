@@ -22,6 +22,13 @@ def path_of(svg_file):
     return m.group(1)
 
 
+def viewbox_of(svg_file):
+    m = re.search(r'viewBox="([^"]+)"', rd(os.path.join('assets', svg_file)))
+    if not m:
+        raise SystemExit('no viewBox in ' + svg_file)
+    return m.group(1)
+
+
 def datauri(name, folder=A):
     p = os.path.join(folder, name)
     mt = mimetypes.guess_type(p)[0] or 'application/octet-stream'
@@ -33,6 +40,9 @@ def base_html():
     html = rd('index.src.html')
     html = html.replace('__MARK__', path_of('mark.svg'))
     html = html.replace('__WORD__', path_of('word.svg'))
+    # логоны viewBox нь SVG файлаасаа ирнэ (2025 оны брэнд гарын авлага)
+    html = html.replace('__MARK_VB__', viewbox_of('mark.svg'))
+    html = html.replace('__WORD_VB__', viewbox_of('word.svg'))
     html = html.replace('__PLANTS__', rd('assets/plants.json'))
     html = html.replace('__PROJECTS__', rd('assets/projects.json'))
     html = html.replace('__CLIENTS__', rd('assets/clients.json'))
