@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Vercel
+.vercel
+
+# Бүтээгддэг файл — build.py --inline-ээр дахин үүснэ (8 МБ)
+oim-standalone.html
+
+# Node
+node_modules/
