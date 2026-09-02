@@ -1,0 +1,16 @@
+{
+  // Cloudflare Worker — зөвхөн статик файл үйлчилнэ.
+  // `main` заагаагүй тул JavaScript ажиллахгүй: 1101 алдаа гарахгүй.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "oim",
+  "compatibility_date": "2026-09-01",
+
+  "assets": {
+    // build.py --dist энэ хавтсыг угсарна
+    "directory": "./dist",
+
+    // Олдоогүй зам дээр 404.html харуулна.
+    // Сайт нь hash чиглүүлэлт (#/shop) ашигладаг тул SPA горим хэрэггүй.
+    "not_found_handling": "404-page"
+  }
+}

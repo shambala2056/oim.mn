@@ -121,6 +121,9 @@ def build_dist():
         if os.path.isdir(src_dir):
             shutil.copytree(src_dir, os.path.join(dist, folder))
 
+    # Олдоогүй зам дээр үндсэн хуудсыг харуулна
+    shutil.copy2(os.path.join(dist, 'index.html'), os.path.join(dist, '404.html'))
+
     total = sum(
         os.path.getsize(os.path.join(r, f))
         for r, _, fs in os.walk(dist) for f in fs
