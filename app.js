@@ -820,4 +820,7 @@
   render();
   show(routeName(), true);
   syncDot();
+
+  var cpyYear = document.getElementById('cpy-year');
+  if (cpyYear) cpyYear.textContent = new Date().getFullYear();
 })();
