@@ -110,11 +110,20 @@ def build_dist():
     shutil.rmtree(dist, ignore_errors=True)
     os.makedirs(dist)
 
-    PUBLISH = ['index.html', 'styles.css', 'app.js', '_headers',
-               'favicon.ico', 'manifest.webmanifest', 'robots.txt', 'sitemap.xml']
-    for name in PUBLISH:
+    # Нийтлэхгүй зүйлс. Үлдсэн БҮХ файл автоматаар очно — ингэснээр
+    # шинэ файл нэмэхэд энд юу ч засах шаардлагагүй.
+    SKIP_FILES = {
+        'index.src.html', 'build.py', 'care-guides.py', 'oim-standalone.html',
+        'README.md', 'wrangler.jsonc', '.gitignore', '.vercelignore',
+        'vercel.json', '.DS_Store', 'deploy.sh',
+    }
+    SKIP_DIRS = {'assets-lite', 'dist', '.git', '.vscode', 'node_modules'}
+
+    for name in sorted(os.listdir(HERE)):
         src_path = os.path.join(HERE, name)
-        if os.path.exists(src_path):
+        if name in SKIP_FILES or name in SKIP_DIRS or name.startswith('.'):
+            continue
+        if os.path.isfile(src_path):
             shutil.copy2(src_path, os.path.join(dist, name))
 
     for folder in ('assets', 'portal'):
