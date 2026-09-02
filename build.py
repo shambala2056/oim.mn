@@ -110,7 +110,8 @@ def build_dist():
     shutil.rmtree(dist, ignore_errors=True)
     os.makedirs(dist)
 
-    PUBLISH = ['index.html', 'styles.css', 'app.js', '_headers']
+    PUBLISH = ['index.html', 'styles.css', 'app.js', '_headers',
+               'favicon.ico', 'manifest.webmanifest', 'robots.txt', 'sitemap.xml']
     for name in PUBLISH:
         src_path = os.path.join(HERE, name)
         if os.path.exists(src_path):

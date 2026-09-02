@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Ажилтны портал — хайлтын системд индекслэхгүй
+Disallow: /portal/
+
+Sitemap: https://oim.mn/sitemap.xml
