@@ -1,7 +1,7 @@
 /* ============================================================
    ОЙМ Ногоон Урлан — brand system
-   Colours, type and pattern taken from the official
-   “ОЙМ Logo Guideline V5” brand book (Suuder, 2022).
+   Өнгө, лого, элемент нь албан ёсны "ОЙМ Brand Guidelines"
+   (Brandguide.pdf, e-source, 2025-02) баримтаас авав.
    ============================================================ */
 
 :root{
@@ -27,6 +27,8 @@
   --line-2:rgba(1,95,77,.30);
   --green-txt:#015F4D;
   --browny-txt:#8C6353;
+  --wm:var(--eco);
+  --wm-o:.05;
   --band:var(--eco);
   --band-ink:#eaf4ef;
   --band-ink-2:rgba(234,244,239,.72);
@@ -54,6 +56,8 @@
     --line:rgba(200,250,229,.15);
     --line-2:rgba(200,250,229,.28);
     --green-txt:#C8FAE5;
+    --wm:var(--mint);
+    --wm-o:.05;
     --browny-txt:#D4A891;
     --band:#04372D;
     --band-ink:#e7f1ec;
@@ -74,6 +78,8 @@
   --line:rgba(200,250,229,.15);
   --line-2:rgba(200,250,229,.28);
   --green-txt:#C8FAE5;
+  --wm:var(--mint);
+  --wm-o:.05;
   --browny-txt:#D4A891;
   --band:#04372D;
   --band-ink:#e7f1ec;
@@ -144,6 +150,14 @@ button{cursor:pointer;background:none;border:0;padding:0}
   mask:url("assets/emblem.webp") no-repeat center/contain;
 }
 
+/* ------------------------------------------------ брэнд элемент
+   Эх сурвалж: Brandguide.pdf 2025, "logo / element design" (12 хэлбэр).
+   Элемент бүр нь дүүргэсэн хавтгай дээр хээ нь цоолсон хэлбэртэй тул
+   currentColor-оор өнгө өгөхөд хээ нь ард талын өнгөөр харагдана. */
+.el-mark{width:1.05em;height:1.05em;flex:none;fill:currentColor;vertical-align:-.18em;margin-right:.5em}
+.el-mark-lg{width:1.3em;height:1.3em;vertical-align:-.24em}
+
+
 /* ------------------------------------------------ announce */
 .announce{background:var(--browny);color:#fff;overflow:hidden;padding:9px 0}
 .announce-track{
@@ -153,7 +167,8 @@ button{cursor:pointer;background:none;border:0;padding:0}
 }
 .announce-track b{font-weight:800}
 .announce-track span{padding:0 26px;white-space:nowrap}
-.announce-track i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.55);align-self:center;flex:none}
+.announce-track i{display:flex;align-self:center;flex:none}
+.announce-track i svg{width:15px;height:15px;fill:rgba(255,255,255,.55)}
 @keyframes mq{to{transform:translateX(-50%)}}
 
 /* ------------------------------------------------ masthead */
@@ -191,6 +206,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
 .mast-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .mast-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
+.masthead{position:sticky;top:0;z-index:60;background:var(--surface)}
 .mast-nav{
   background:var(--surface);border-bottom:1px solid var(--line);
   display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(14px,3vw,38px);
@@ -211,6 +227,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
 
 /* ------------------------------------------------ pages */
 .page-head{padding:clamp(40px,5vw,68px) 0 clamp(26px,3vw,38px);background:var(--ground-2);border-bottom:1px solid var(--line)}
+.page-head .eyebrow{display:flex;align-items:center}
 .page-head h1{font-size:clamp(32px,4.6vw,56px);letter-spacing:-.03em}
 .page-lede{margin-top:18px;max-width:64ch;color:var(--ink-2);font-size:clamp(16px,1.35vw,18px)}
 .page-lede b{color:var(--ink);font-weight:600}
@@ -253,13 +270,31 @@ button{cursor:pointer;background:none;border:0;padding:0}
 @media(max-width:860px){.rent-two{grid-template-columns:1fr}}
 @media(max-width:460px){.rt-card{grid-template-columns:1fr}.rt-card img{aspect-ratio:16/9;min-height:0}}
 
+/* ------------------------------------------------ брэнд хээний зохиомж
+   Хэсгүүдийн дэвсгэрт тарсан элемент: зарим нь ирмэгээр таслагдана,
+   зарим нь бүтнээрээ харагдана. Гэрэлтэй дэвсгэрт бараан, бараан
+   дэвсгэрт цайвар өнгөөр — контраст үргэлж зөв тийш. */
+.el-wm{position:absolute;pointer-events:none;z-index:0;aspect-ratio:1;
+  width:var(--wm-w,clamp(230px,26vw,400px));fill:var(--wm);opacity:var(--wm-o)}
+
+/* таслагдах — ирмэгээс хальна */
+.el-wm-tr{right:-8%;top:-13%}
+.el-wm-tl{left:-9%;top:-15%}
+.el-wm-br{right:-7%;bottom:-15%}
+.el-wm-bl{left:-9%;bottom:-17%}
+/* бүтэн — дотогшоо, жижигхэн */
+.el-wm-in-r{right:4%;top:38%;--wm-w:clamp(96px,10vw,150px)}
+.el-wm-in-l{left:3%;bottom:12%;--wm-w:clamp(80px,8vw,120px)}
+.el-wm-in-t{left:46%;top:5%;--wm-w:clamp(66px,6vw,96px)}
+.el-wm-in-b{right:26%;bottom:7%;--wm-w:clamp(74px,7vw,110px)}
+
+/* үргэлж ногоон дэвсгэртэй хэсэгт цайвараар */
+.care .el-wm,.prod .el-wm,.contact .el-wm,.impact .el-wm{fill:var(--mint);opacity:.07}
+.section,.clients,.foot,.hero{position:relative;overflow:hidden}
+.wrap{position:relative;z-index:1}
+
 /* ------------------------------------------------ hero */
-.hero{
-  position:relative;isolation:isolate;overflow:hidden;
-  min-height:clamp(520px,82vh,860px);
-  display:grid;align-items:center;
-  background:var(--eco-deep);
-}
+.hero-inner{position:relative;z-index:1}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .hero-veil{
   position:absolute;inset:0;z-index:-1;
@@ -476,6 +511,7 @@ button{cursor:pointer;background:none;border:0;padding:0}
 .care-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .care-t{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px}
 .care-n{
+  display:flex;align-items:center;
   font-family:var(--f-round);font-size:10.5px;font-weight:800;letter-spacing:.14em;
   text-transform:uppercase;color:var(--mint);
 }
@@ -717,7 +753,7 @@ a.chain-i:hover{background:rgba(255,255,255,.12);border-color:var(--mint);transf
 .chain-i.is-on{background:var(--mint);border-color:var(--mint);color:#04372D}
 .chain-n{font-family:var(--f-round);font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--mint)}
 .chain-i.is-on .chain-n{color:#0A4638}
-.chain-i b{font-size:clamp(16px,1.7vw,19px);font-weight:700;letter-spacing:-.02em;color:#fff}
+.chain-i b{display:flex;align-items:center;font-size:clamp(16px,1.7vw,19px);font-weight:700;letter-spacing:-.02em;color:#fff}
 .chain-i.is-on b{color:#04372D}
 .chain-i i{font-style:normal;font-size:12.5px;line-height:1.45;color:var(--band-ink-2)}
 .chain-i.is-on i{color:#0A4638}
@@ -730,7 +766,7 @@ a.chain-i:hover{background:rgba(255,255,255,.12);border-color:var(--mint);transf
 .pd-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .pd:hover .pd-img img{transform:scale(1.05)}
 .pd-b{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
-.pd-n{font-family:var(--f-round);font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--mint)}
+.pd-n{display:flex;align-items:center;font-family:var(--f-round);font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--mint)}
 .pd-b h3{font-size:20px;letter-spacing:-.022em;color:#fff}
 .pd-lead{font-size:14px;line-height:1.55;color:var(--band-ink-2)}
 .pd-l{display:flex;flex-direction:column;gap:11px;margin-top:10px;padding-top:14px;
@@ -933,7 +969,9 @@ a.chain-i:hover{background:rgba(255,255,255,.12);border-color:var(--mint);transf
 .ci-q output{min-width:22px;text-align:center;font-family:var(--f-round);font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
 .ci-x{font-family:var(--f-round);font-size:11.5px;font-weight:700;color:var(--ink-3);text-decoration:underline;text-underline-offset:2px}
 .ci-x:hover{color:var(--browny-txt)}
-.cart-empty{padding:56px 22px;text-align:center;color:var(--ink-3);font-size:15px;line-height:1.6}
+.cart-empty{padding:52px 22px;text-align:center;color:var(--ink-3);font-size:15px;line-height:1.6;
+  display:flex;flex-direction:column;align-items:center;gap:16px}
+.cart-empty-el{width:56px;height:56px;fill:var(--line-2)}
 .cart-foot{padding:20px 22px 24px;border-top:1px solid var(--line);background:var(--surface-2);display:flex;flex-direction:column;gap:12px}
 .cart-sum{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
 .cart-sum span{font-family:var(--f-round);font-size:12.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}

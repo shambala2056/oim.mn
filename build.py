@@ -46,6 +46,7 @@ def base_html():
     html = html.replace('__PLANTS__', rd('assets/plants.json'))
     html = html.replace('__PROJECTS__', rd('assets/projects.json'))
     html = html.replace('__CLIENTS__', rd('assets/clients.json'))
+    html = html.replace('__ELEMENTS__', rd('assets/elements.svg'))
     return html
 
 
@@ -63,6 +64,7 @@ def build_inline(lite=True):
     css = rd('styles.css')
     for fern in ('fern-a.webp', 'fern-b.webp'):
         css = css.replace('assets/' + fern, datauri(fern, folder))
+    css = css.replace('assets/el-strip.svg', datauri('el-strip.svg', A))
     html = html.replace('<link rel="stylesheet" href="styles.css">',
                         '<style>\n' + css + '\n</style>')
 

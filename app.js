@@ -533,8 +533,11 @@
   function drawCart() {
     var ids = Object.keys(cart);
     if (!ids.length) {
-      cartItems.innerHTML = '<p class="cart-empty">Сагс хоосон байна.<br>' +
-        'Каталогоос сонирхсон ургамлаа нэмнэ үү.</p>';
+      cartItems.innerHTML =
+        '<div class="cart-empty">' +
+          '<svg class="cart-empty-el" viewBox="0 0 100 100" aria-hidden="true"><use href="#el02"/></svg>' +
+          '<p>Сагс хоосон байна.<br>Каталогоос сонирхсон ургамлаа нэмнэ үү.</p>' +
+        '</div>';
       cartFoot.innerHTML = '';
       return;
     }

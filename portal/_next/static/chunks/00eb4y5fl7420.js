@@ -9,4 +9,4 @@
         @media (max-width: 700px) {
           .dash-kpi { grid-template-columns: minmax(0,1fr); }
         }
-      `})]})}])},3975,e=>{e.v(t=>Promise.all(["static/chunks/091u8h~hi3hm1.js"].map(t=>e.l(t))).then(()=>t(41166)))}]);
+      `})]})}])},3975,e=>{e.v(t=>Promise.all(["static/chunks/0m~k0ub7_4i69.js"].map(t=>e.l(t))).then(()=>t(41166)))},27510,e=>{e.v(t=>Promise.all(["static/chunks/0icrp-wwk-9ef.js"].map(t=>e.l(t))).then(()=>t(48323)))}]);
