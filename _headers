@@ -1,0 +1,20 @@
+# Cloudflare Pages — HTTP толгойн тохиргоо
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+# Зураг, фонт, JS — агуулга солигдвол нэр нь өөрчлөгддөг тул үүрд кэшлэнэ
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/portal/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML — үргэлж шинээр шалгана
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Аюулгүй байдлын толгой
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()

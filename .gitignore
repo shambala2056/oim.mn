@@ -9,3 +9,6 @@ oim-standalone.html
 
 # Node
 node_modules/
+
+# Cloudflare Pages-д бүтээгддэг
+/dist/

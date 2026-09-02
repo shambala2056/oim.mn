@@ -100,7 +100,38 @@ def build_inline(lite=True):
           % (os.path.getsize(out) / 1024, len(files), os.path.basename(folder)))
 
 
+def build_dist():
+    """Cloudflare Pages-д нийтлэх хавтас бэлдэнэ.
+
+    Эх файлууд (index.src.html, build.py, assets-lite/ …) нийтлэгдэхгүй —
+    зөвхөн бэлэн сайт очно."""
+    import shutil
+    dist = os.path.join(HERE, 'dist')
+    shutil.rmtree(dist, ignore_errors=True)
+    os.makedirs(dist)
+
+    PUBLISH = ['index.html', 'styles.css', 'app.js', '_headers']
+    for name in PUBLISH:
+        src_path = os.path.join(HERE, name)
+        if os.path.exists(src_path):
+            shutil.copy2(src_path, os.path.join(dist, name))
+
+    for folder in ('assets', 'portal'):
+        src_dir = os.path.join(HERE, folder)
+        if os.path.isdir(src_dir):
+            shutil.copytree(src_dir, os.path.join(dist, folder))
+
+    total = sum(
+        os.path.getsize(os.path.join(r, f))
+        for r, _, fs in os.walk(dist) for f in fs
+    )
+    n = sum(len(fs) for _, _, fs in os.walk(dist))
+    print('dist/              %6.1f MB, %d файл' % (total / 1024 / 1024, n))
+
+
 if __name__ == '__main__':
     build_site()
     if '--inline' in sys.argv:
         build_inline()
+    if '--dist' in sys.argv:
+        build_dist()
