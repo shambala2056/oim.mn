@@ -117,7 +117,7 @@ def build_dist():
         'README.md', 'wrangler.jsonc', '.gitignore', '.vercelignore',
         'vercel.json', '.DS_Store', 'deploy.sh',
     }
-    SKIP_DIRS = {'assets-lite', 'dist', '.git', '.vscode', 'node_modules'}
+    SKIP_DIRS = {'assets-lite', 'dist', '.git', '.vscode', 'node_modules', 'v2'}
 
     for name in sorted(os.listdir(HERE)):
         src_path = os.path.join(HERE, name)

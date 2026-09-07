@@ -824,3 +824,33 @@
   show(routeName(), true);
   syncDot();
 })();
+
+/* ── Хөдөлгөөн: animation-timeline дэмждэггүй хөтчид (Safari, Firefox)
+      IntersectionObserver-ээр ижил үр дүн гаргана. ───────────────── */
+(function(){
+  var native = CSS && CSS.supports && CSS.supports('animation-timeline','view()');
+  var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if (native || reduce || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js-anim');
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+  var SEL = '.sec-head,.page-head h1,.hero-title,.trust-i b,.reveal,' +
+            '.card-media,.tcard,.tile,.pick,.case';
+  function watch(root){ (root||document).querySelectorAll(SEL).forEach(function(el){ io.observe(el); }); }
+  watch();
+  /* Шүүлтүүр, чиглүүлэгч шинэ карт нэмэх бүрд дахин бүртгэнэ.
+     Эвентээс хамаарахгүйн тулд DOM-ыг шууд ажиглана. */
+  new MutationObserver(function(muts){
+    for (var i = 0; i < muts.length; i++) {
+      var added = muts[i].addedNodes;
+      for (var j = 0; j < added.length; j++) {
+        if (added[j].nodeType === 1) watch(added[j].parentNode || document);
+      }
+    }
+  }).observe(document.body, { childList: true, subtree: true });
+})();

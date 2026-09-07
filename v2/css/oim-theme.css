@@ -1,0 +1,126 @@
+/* ============================================================
+   ОЙМ — Axino index-2 загварын өнгөний давхарга
+   Загварын ягаан (#8D56FA) → ОЙМ-ийн лайм (#95C808)
+   Брэндийн ногоон гэр бүлийг гүн өнгө болгон хадгална.
+   ============================================================ */
+:root{
+  /* --- өргөлт --- */
+  --theme-color1:#95C808;              /* үндсэн өргөлт (байсан #8D56FA) */
+  --theme-color1-rgb:149,200,8;
+  --theme-color3:#C8FAE5;              /* брэндийн цайвар ногоон */
+  --theme-color3-rgb:200,250,229;
+  --theme-color4:#005F4D;              /* брэндийн ногоон */
+
+  /* --- дэвсгэр: ягаан-хөх биш, гүн ногоон-хар --- */
+  --theme-color2:#04120E;
+  --theme-color2-rgb:4,18,14;
+  --body-bg:#050F0C;
+
+  /* --- градиентууд --- */
+  --gradient-1: linear-gradient(180deg,#04120E 33%,#0B3D31 101%);
+  --gradient-2: linear-gradient(89.51deg,#04120E -14%,#0B3D31 100%);
+  --gradient-3: linear-gradient(180deg,#95C808 0%,#4FA83C 49%,#005F4D 100%);
+  --gradient-4: linear-gradient(90deg,#0B3D31 -9%,#04120E 91%);
+  --gradient-5: linear-gradient(90deg,#04120E 0%,#0B3D31 85%);
+  --gradient-6: linear-gradient(180deg,#04120E 43%,#0B3D31 156%);
+  --gradient-7: linear-gradient(180deg,#04120E 33%,#0B3D31 101%);
+  --gradient-8: linear-gradient(180deg,#95C808 0%,#3E5A0A 100%);
+  --gradient-9: linear-gradient(180deg,#04120E 43%,#0B3D31 156%);
+  --gradient-19:linear-gradient(80deg,#050F0C 2%,#050F0C00 100%);
+  --gradient-20:linear-gradient(270deg,#050F0C 2%,#050F0C00 100%);
+
+  /* --- бичвэр --- */
+  --text-color-theme-color1:#04120E;   /* лайм дээрх бичиг хар байх ёстой */
+  --headings-color:#ffffff;
+
+  /* --- фонт: брэнд бүүкийн орлуулагч --- */
+  --title-font:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --text-font:"Montserrat","Helvetica Neue",Arial,sans-serif;
+}
+body{background:var(--body-bg)}
+
+/* ── Монгол бичвэрт үг бүрийг томоор бичих нь буруу ─────────────── */
+.sec-title .title, .banner-section-two h1.title, .btn-text,
+.theme-btn, .btn-style-five, .read-more, h1,h2,h3,h4,h5,h6,
+.widget-title, .client-title, .sub-title, .acc-btn, .navigation > li > a{
+  text-transform:none !important;
+}
+/* Харилцагчийн лого цагаан суурьтай тул хар дэвсгэр дээр чипэнд суулгана */
+.clients-section .client-block .image-box figure.image{
+  background:#fff;border-radius:12px;padding:14px 18px;
+  display:flex;align-items:center;justify-content:center;min-height:78px;
+}
+.clients-section .client-block img{max-height:46px;width:auto;object-fit:contain}
+/* Төслийн зураг */
+.testimonial-section-layout2 .project-block .inner-box{
+  border-radius:18px;overflow:hidden;background:rgba(255,255,255,.04);
+  border:1px solid rgba(149,200,8,.18);
+}
+.testimonial-section-layout2 .project-block figure.image{margin:0;aspect-ratio:4/3;overflow:hidden}
+.testimonial-section-layout2 .project-block img{width:100%;height:100%;object-fit:cover}
+.testimonial-section-layout2 .project-block .content-box{padding:14px 16px 16px}
+.testimonial-section-layout2 .project-block .title{font-size:15px;margin:0;color:#fff}
+
+/* ── Загвар босоо утасны макет хүлээж байсан хэсгүүдэд хэвтээ зураг
+      тавьсан тул хэмжээг жигдрүүлнэ ──────────────────────────────── */
+.feature-section-h2 .image-box{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.feature-section-h2 .image-box figure,
+.feature-section-h2 .image-box .image{margin:0;flex:1 1 clamp(200px,22%,280px);max-width:300px}
+.feature-section-h2 .image-box img{
+  width:100%;height:200px;object-fit:cover;border-radius:18px;
+  border:1px solid rgba(149,200,8,.22);transform:none !important;
+}
+.cta-section-layout2 .image-box img,
+.cta-section-two-layout2 .image-box img{
+  border-radius:18px;object-fit:cover;max-height:240px;width:100%;
+}
+.cta-section-layout2 .image-box,
+.cta-section-two-layout2 .image-box{display:flex;gap:16px;flex-wrap:wrap}
+/* Гарчгийн үсэг тус бүрийг өөр өнгөөр будахыг зогсооно */
+.sec-title .title span,.sec-title .title .char{color:inherit !important}
+.banner-section-two h1.title span{color:var(--theme-color1) !important}
+
+/* Төслийн карт (сэтгэгдлийн блокийг орлуулсан) */
+.testimonial-block-layout2 .oim-proj{margin:0 0 18px;border-radius:16px;overflow:hidden;aspect-ratio:4/3}
+.testimonial-block-layout2 .oim-proj img{width:100%;height:100%;object-fit:cover;display:block}
+.testimonial-block-layout2 .text{display:none}
+.testimonial-block-layout2 .author .title{font-size:16px;margin:0}
+
+/* ── Үнийн карт: загвар "$40.00" гэсэн богино тэмдэглэгээнд зориулагдсан
+      тул 3,000,000₮ багтахгүй байв ──────────────────────────────────── */
+.pricing-section-layout2 .des-portfolio-wrap{display:flex;flex-direction:column;gap:18px}
+.pricing-section-layout2 .tm-pricing-table{position:relative !important;transform:none !important;
+  inset:auto !important;width:100% !important;margin:0 !important;opacity:1 !important}
+.pricing-section-layout2 .card-content{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start}
+.pricing-section-layout2 .price-header{flex:1 1 260px;min-width:240px}
+.pricing-section-layout2 .features{flex:1 1 280px}
+.pricing-section-layout2 .price{font-size:clamp(28px,3vw,40px);white-space:nowrap;line-height:1.1}
+.pricing-section-layout2 .validaty{font-size:15px;margin-left:6px;white-space:nowrap}
+.pricing-section-layout2 .features li{white-space:normal}
+@media(min-width:1200px){.pricing-section-layout2 .des-portfolio-wrap{gap:20px}}
+
+/* ── Төслийн карусель: нэг зураг хэт том болохоос сэргийлнэ ─────────── */
+.testimonial-section-layout2 .swiper-slide{max-width:520px;margin-inline:auto}
+.testimonial-block-layout2 .oim-proj{aspect-ratio:16/10;max-height:340px}
+.testimonial-section-layout2 .author{text-align:center}
+/* Загварын ягаан сум/цэгийг брэндийн өнгө рүү */
+.testimonial-arry .arry-prev,.testimonial-arry .arry-next,
+.swiper-pagination-bullet-active{background:var(--theme-color1) !important;color:#04120E !important}
+.testimonial-section-layout2 svg path[fill*="8D56"],
+.testimonial-section-layout2 svg path[fill*="7B3F"]{fill:var(--theme-color1) !important}
+
+/* Үнийн хүснэгт: гарчгийг дээр нь тавьж, картуудад бүтэн өргөн өгнө */
+@media(min-width:1200px){
+  .pricing-section-layout2 .row{display:block}
+  .pricing-section-layout2 .col-xl-5,
+  .pricing-section-layout2 .col-xl-7{max-width:100%;flex:0 0 100%;width:100%}
+  .pricing-section-layout2 .col-xl-5 .sec-title{text-align:center;margin-inline:auto;max-width:760px}
+}
+.pricing-section-layout2 .tm-pricing-table .inner-box{width:100%}
+/* Загварын ягаан сум */
+.testimonial-arry svg *,.testimonial-arry i{color:var(--theme-color1) !important;fill:var(--theme-color1) !important}
+[class*="arry"] img{filter:hue-rotate(-140deg) saturate(1.2)}
+/* CTA1 доторх лого ирмэгээс гарахгүй */
+.cta-section-layout2 .logo-box{left:auto !important;right:auto !important;position:relative !important;
+  display:flex;justify-content:center;margin-top:24px}
+.cta-section-layout2 .logo-box img{height:52px;width:auto}
