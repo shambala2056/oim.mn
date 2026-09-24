@@ -22,6 +22,20 @@ def path_of(svg_file):
     return m.group(1)
 
 
+def leaf_of(svg_file):
+    """Логоны тэмдгээс зөвхөн НАВЧИН хэсгийг (эхний 3 дэд зам) гаргана.
+
+    Гарын авлагын навчин тэмдэг нь логоны mark.svg дотор бие даасан
+    дэд зам болж байдаг: 0 = хоёр навчны гадна контур, 1-2 = навч тус
+    бүрийн дотоод хөндий. Тусад нь файл болгохгүй эндээс гаргаснаар
+    лого шинэчлэгдвэл навч нь автоматаар дагана."""
+    d = path_of(svg_file)
+    subs = re.findall(r'[Mm][^Mm]*', d)
+    if len(subs) < 3:
+        raise SystemExit('mark.svg-д навчин дэд зам олдсонгүй')
+    return ''.join(subs[0:3]).strip()
+
+
 def viewbox_of(svg_file):
     m = re.search(r'viewBox="([^"]+)"', rd(os.path.join('assets', svg_file)))
     if not m:
@@ -42,6 +56,7 @@ def base_html():
     html = html.replace('__WORD__', path_of('word.svg'))
     # логоны viewBox нь SVG файлаасаа ирнэ (2025 оны брэнд гарын авлага)
     html = html.replace('__MARK_VB__', viewbox_of('mark.svg'))
+    html = html.replace('__LEAF__', leaf_of('mark.svg'))
     html = html.replace('__WORD_VB__', viewbox_of('word.svg'))
     html = html.replace('__PLANTS__', rd('assets/plants.json'))
     html = html.replace('__PROJECTS__', rd('assets/projects.json'))

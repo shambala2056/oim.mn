@@ -821,14 +821,26 @@
 
   /* ---------------------------------------------- go */
   render();
-  /* ---------------------------------------------- салбарын газрын зураг
-     iframe эхэндээ pointer-events:none — утсан дээр хуудасны гүйлт
-     газрын зурагт баригдахаас сэргийлнэ. Товч дарж идэвхжүүлнэ. */
+  /* ---------------------------------------------- салбар сонгох
+     Газрын зураг дээрх тэмдэглэгээ дарахад доорх мэдээлэл солигдоно.
+     iframe нь үргэлж pointer-events:none — утсан дээр хуудасны гүйлт
+     газрын зурагт баригдахгүй, харилцан үйлдэл нь зөвхөн тэмдэглэгээ. */
   document.addEventListener('click', function (e) {
-    var t = e.target.closest ? e.target.closest('.br-tap') : null;
-    if (!t) return;
-    var box = t.closest('.br-map');
-    if (box) box.classList.add('is-live');
+    var pin = e.target.closest ? e.target.closest('.brs-pin') : null;
+    if (!pin) return;
+    var wrap = pin.closest('.brs');
+    if (!wrap) return;
+    var i = pin.dataset.br;
+    wrap.querySelectorAll('.brs-pin').forEach(function (p) {
+      var on = p.dataset.br === i;
+      p.classList.toggle('is-on', on);
+      p.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    wrap.querySelectorAll('.brs-card').forEach(function (c) {
+      var on = c.dataset.br === i;
+      c.hidden = !on;
+      c.classList.toggle('is-on', on);
+    });
   });
 
   show(routeName(), true);
