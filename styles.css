@@ -645,7 +645,20 @@ svg,iframe,video{max-width:100%;height:auto;display:block}
 .br-k{font-family:var(--f-round);font-size:10.5px;font-weight:800;letter-spacing:.14em;
   text-transform:uppercase;color:var(--band-accent)}
 .br-n{font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.018em;color:var(--band-strong)}
-.br-addr{font-size:13.5px;color:var(--band-ink-2)}
+.br-addr{font-size:13.5px;line-height:1.5;color:var(--band-ink-2)}
+
+/* ажиллах цаг */
+.br-hrs{display:flex;gap:10px;align-items:flex-start;margin-top:12px;
+  padding-top:12px;border-top:1px solid var(--band-line)}
+.br-clk{width:17px;height:17px;flex:none;margin-top:1px;
+  fill:none;stroke:var(--band-accent);stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
+.br-hrs dl{display:flex;flex-direction:column;gap:3px;min-width:0}
+.br-hrs dl div{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.br-hrs dt{font-family:var(--f-round);font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--band-ink-2);min-width:104px}
+.br-hrs dd{font-family:var(--f-round);font-size:13.5px;font-weight:800;
+  color:var(--band-strong);font-variant-numeric:tabular-nums}
 .br-act{display:flex;flex-wrap:wrap;gap:9px;margin-top:11px}
 .br-act .btn{gap:7px}
 .br-act .btn svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;
