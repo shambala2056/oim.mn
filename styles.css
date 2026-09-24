@@ -654,22 +654,28 @@ svg,iframe,video{max-width:100%;height:auto;display:block}
      Саруул Δx=-82.9px  Δy=+12.5px
    320px өргөнд ч хоёулаа багтана (хагас өргөн 160px > 83px).
 
-   Зураг нь ТӨВ салбар дээрээ төвлөрсөн нь санаатай: энэ embed нь q=
-   цэг дээрээ өөрийн улаан тэмдэглэгээ зурдаг бөгөөд түүнийг унтраах
-   параметр байхгүй (ll= хэлбэр нь зургийг огт ачаалуулахгүй болгодог).
-   Төвийг салбар дээр тавьснаар тэр улаан тэмдэглэгээ манай pin-ний
-   доор бүрэн далдарна — дундаж цэг дээр төвлөрүүлбэл утгагүй байрлалд
-   улаан тэмдэглэгээ үлдэнэ. */
+   Embed нь ll= (зөвхөн төвлөрүүлэх) хэлбэртэй — q= (хайх) хэлбэр нь
+   цэг дээрээ Google-ийн улаан тэмдэглэгээ зурдаг бөгөөд манай pin
+   түүнийг бүрэн далдалдаггүй байв. Төв нь ТӨВ салбар дээр байгаа тул
+   тэмдэглэгээ эргэн гарсан ч утгагүй биш, салбарын байрлалд таарна. */
 .brs{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(16px,2vw,26px);align-items:start}
 @media(max-width:900px){.brs{grid-template-columns:1fr}}
 
 .brs-map{
+  /* ll= embed нь зүүн дээд буланд Google-ийн «Газрын зураг дээр нээх»
+     товч тавьдаг. iframe-ийг --mshift-ээр дээш шилжүүлж түүнийг
+     огтолно; доод талын Google лого, нөхцөлийн холбоос хэвээр үлдэнэ.
+     Ингэснээр зургийн ТӨВ мөн --mshift/2-оор дээш шилжих тул
+     тэмдэглэгээний --y утгад тэр хэмжээг хассан байгаа. */
+  --mshift:64px;
   position:relative;aspect-ratio:16/11;overflow:hidden;
   border:1px solid var(--band-line);border-radius:var(--r-lg);background:var(--bg-deep);
 }
 @media(max-width:900px){.brs-map{aspect-ratio:16/10}}
 .brs-map iframe{
-  position:absolute;inset:0;width:100%;height:100%;border:0;display:block;
+  position:absolute;left:0;right:0;
+  top:calc(-1 * var(--mshift));width:100%;height:calc(100% + var(--mshift));
+  border:0;display:block;
   pointer-events:none;           /* утсан дээр хуудасны гүйлт баригдахгүй */
   filter:saturate(.9) contrast(1.02);
 }
