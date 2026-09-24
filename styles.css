@@ -315,7 +315,27 @@ svg:not(.glyph):not(.wordmark):not(.el-wm):not(.el-mark):not(.el-strip):not(.br-
   padding:3px 6px;border-radius:999px;line-height:1;
   color:var(--oim-800);background:var(--mint);white-space:nowrap;
 }
-.foot-nav .nav-soon{color:rgba(231,241,236,.56);border-bottom-width:1px}
+/* Хөлд «тун удахгүй» хэсгүүдийг жинхэнэ холбоостой нэг эгнээнд биш,
+   доор нь тусад нь, нэг ерөнхий тэмдэгтэй болгов. Өмнө 8 зүйл нэг
+   эгнээнд орж, орлуулагчид жинхэнэ цэстэй ижил жинтэй харагдаж байв. */
+.foot-soon{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:6px 12px;margin:2px 0 4px;
+  font-family:var(--f-round);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;
+}
+.foot-soon .nav-soon{
+  padding:0;border-bottom:0;gap:0;
+  color:rgba(231,241,236,.56);
+}
+.foot-soon .nav-soon+.nav-soon::before{
+  content:"·";margin-right:12px;color:rgba(231,241,236,.34);
+}
+.foot-soon>i{
+  font-style:normal;font-size:8.5px;font-weight:800;letter-spacing:.06em;
+  padding:3px 7px;border-radius:999px;line-height:1;
+  color:var(--oim-800);background:var(--mint);white-space:nowrap;
+}
 .nav-sub .nav-soon{
   width:100%;justify-content:space-between;gap:14px;white-space:nowrap;
   padding:9px 10px;border-bottom:0;border-radius:9px;
