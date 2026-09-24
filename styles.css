@@ -23,10 +23,28 @@
   --n-400:#77857E; --n-500:#586158; --n-600:#3B433D; --n-700:#262E28;
   --n-800:#171E19; --n-900:#0A0F0D;
 
+  /* ─── ДЭВСГЭРИЙН БАГЦ ───────────────────────────────────────────
+     Гарын авлагын "текстийн өнгөний хэрэглээ" хуудсанд зөвшөөрөгдсөн
+     дэвсгэрүүдийг PDF-ийн пикселээс шууд хэмжиж авав. Ойм ногоонтой
+     хоршиж болох цорын ганц дэвсгэрийн багц нь энэ:                  */
+  --bg-mint:#CAF9E5;      /* цайвар ногоон — гэрэл зурвас            */
+  --bg-forest:#015F4D;    /* ойм ногоон    — үндсэн өнгөт зурвас     */
+  --bg-deep:#04372D;      /* гүн ногоон    — гүнзгий зурвас          */
+  /* Гарын авлагын шороон гэр бүл — баримтжуулсан боловч сайтад
+     ХЭРЭГЛЭХГҮЙ: дэвсгэрт зөвхөн ногоон гэр бүлийг ашиглана.
+     (Тэмдэглэл: #A67868 нь цагаан бичигтэй ч 3.81:1 буюу бичгийн
+      дэвсгэрт огт тохирохгүй.)                                    */
+  --bg-sand:#DBC1B0; --bg-clay:#A67868; --bg-cocoa:#61463D;
+
+  /* форест өнгөт гадаргуун шатлал — хар биш, ногоон аястай гүнзгий.
+     Өмнө бүх зурвас #0A0F0D дээр цулгай байсныг энэ шатлал орлоно. */
+  --f-900:#04140F;  --f-800:#07231C;  --f-700:#0B2E25;
+  --f-600:#0F3A2F;  --f-500:#14483A;
+
   /* гадаргуу — порталын surface токен */
-  --s-page:#0A0F0D; --s-card:#121815; --s-line:#1D2620;
+  --s-page:var(--f-800); --s-card:var(--f-700); --s-line:var(--f-600);
   --carousel-bg:#DCE0DD;  /* логоны каруселийн саарал дэвсгэр */
-  --band-grad:linear-gradient(135deg,#060B08 0%,#0C1B10 55%,#16300E 100%);
+  --band-grad:linear-gradient(135deg,#04140F 0%,#07231C 55%,#04372D 100%);
 
   /* нэмэлт брэнд өнгө — лого, элемент, гарын авлагын лавлагаа */
   --eco:#005F4D; --eco-deep:#04372D;
@@ -40,7 +58,7 @@
   --surface-2:#F7FAF8;
   --ink:var(--n-800);
   --ink-2:var(--n-500);
-  --ink-3:var(--n-400);
+  --ink-3:var(--n-500);
   --line:rgba(23,30,25,.12);
   --line-2:rgba(23,30,25,.24);
   --oim-txt:var(--oim);       /* цайвар суурин дээр — ойм ногоон */
@@ -80,7 +98,7 @@
     --surface-2:#18201B;
     --ink:var(--n-100);
     --ink-2:var(--n-300);
-    --ink-3:var(--n-400);
+    --ink-3:var(--n-300);
     --line:rgba(0,95,77,.14);
     --line-2:rgba(0,95,77,.26);
     --oim-txt:var(--mint);
@@ -105,7 +123,7 @@
   --surface-2:#18201B;
   --ink:var(--n-100);
   --ink-2:var(--n-300);
-  --ink-3:var(--n-400);
+  --ink-3:var(--n-300);
   --line:rgba(0,95,77,.14);
   --line-2:rgba(0,95,77,.26);
   --oim-txt:var(--mint);
@@ -151,7 +169,8 @@ button{cursor:pointer;background:none;border:0;padding:0}
   letter-spacing:.16em;text-transform:uppercase;color:var(--browny-txt);margin-bottom:14px;
 }
 .eyebrow-light{color:var(--oim-txt)}
-.band-sand .eyebrow-light{color:var(--band-accent)}
+.band-mint .eyebrow-light,.band-deep .eyebrow-light,
+.band-forest .eyebrow-light{color:var(--band-accent)}
 .section{padding:clamp(64px,8vw,116px) 0;position:relative}
 .sec-head{max-width:none;margin-bottom:clamp(34px,4vw,52px)}
 .sec-head h2{font-size:clamp(30px,4.1vw,50px)}
@@ -418,60 +437,114 @@ svg,iframe,video{max-width:100%;height:auto;display:block}
 @media(prefers-reduced-motion:reduce){.hero-down{animation:none}}
 @media(max-width:600px){.hero{min-height:clamp(460px,74vh,640px)}.hero-down{display:none}}
 
-/* ------------------------------------------------ элсэн даавуун тууз
-   Брэндийн хэрэглээний хуудсууд (тор цүнх, хавтас): цайвар даавуун
-   талбай дээр ижил өнгийн аястай хээ, ногоон нь зөвхөн бичиг/өргөлт. */
-.band-sand{
-  --band:var(--n-100);
-  --band-ink:var(--n-700);
-  --band-ink-2:rgba(38,46,40,.86);
-  --band-line:rgba(23,30,25,.14);
-  --band-strong:var(--n-800);
-  --band-accent:var(--oim-800);
-  --band-panel:rgba(255,255,255,.70);
-  --band-panel-h:#ffffff;
-  --band-img-bg:rgba(23,30,25,.06);
-  --band-on-bg:var(--oim);
-  --band-on-ink:var(--on-oim);
-  --band-wm:var(--n-800);
-  --band-wm-o:.05;
+
+
+/* ------------------------------------- өнгөт зурвасын хувилбарууд
+   Гарын авлагын зөвшөөрөгдсөн дэвсгэрүүд. Өмнө 16 хэсгийн 14 нь яг ижил
+   #0A0F0D байсан тул хуудас цулгай харагдаж, харанхуй горимд элсэн тууз
+   хүртэл мөн өнгө болж бүх ялгаа алга болдог байв. Эдгээр нь горимоос
+   үл хамааран тогтмол — өөрөө харанхуй/өнгөт учир хувиргах шаардлагагүй. */
+.band-deep,.band-forest{
+  --band-ink:#e7f1ec;
+  --band-ink-2:rgba(231,241,236,.72);
+  --band-line:rgba(200,250,229,.20);
+  --band-strong:#ffffff;
+  --band-accent:var(--mint);
+  --band-panel:rgba(255,255,255,.07);
+  --band-panel-h:rgba(255,255,255,.13);
+  --band-img-bg:rgba(0,0,0,.22);
+  --band-on-bg:var(--mint);
+  --band-on-ink:var(--oim-800);
+  --band-wm:var(--mint);
+  --band-wm-o:.075;
   --wm:var(--band-wm);--wm-o:var(--band-wm-o);
+  --oim-txt:var(--band-accent);--green-txt:var(--band-accent);
+  /* зурвас нь горимоос үл хамааран харанхуй тул доторх бүрдлүүдийн
+     гадаргуу/бичгийн токеныг ч зурваст нийцүүлнэ — эс тэгвээс гэрэл
+     горимд карт цагаан болж, доторх цайвар бичиг уншигдахгүй болно */
+  --surface:rgba(255,255,255,.07);
+  --surface-2:rgba(255,255,255,.12);
+  --ink:var(--band-ink);
+  --ink-2:var(--band-ink-2);
+  --ink-3:rgba(231,241,236,.62);
+  --line:var(--band-line);
+  --line-2:rgba(200,250,229,.30);
+  --browny-txt:var(--band-ink-2);
   background:var(--band);color:var(--band-ink);
 }
+.band-deep  { --band:var(--bg-deep) }
 
-/* Даавуун тууз нь гэрэл горимын хэрэглүүр — харанхуйд ногоон туузандаа эргэнэ */
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .band-sand{
-  --band:var(--s-page);
-  --band-ink:#e7f1ec;
-  --band-ink-2:rgba(231,241,236,.70);
-  --band-line:rgba(200,250,229,.20);
-  --band-strong:#ffffff;
-  --band-accent:var(--mint);
-  --band-panel:rgba(255,255,255,.07);
-  --band-panel-h:rgba(255,255,255,.13);
-  --band-img-bg:rgba(0,0,0,.2);
+.band-forest{ --band:var(--bg-forest); --band-line:rgba(200,250,229,.26);
+              --band-panel:rgba(255,255,255,.10); --band-panel-h:rgba(255,255,255,.17);
+              --band-wm-o:.10 }
+
+/* цайвар мануу зурвас — гэрэл горимын амсхийлт */
+.band-mint{
+  --band:var(--bg-mint);
+  --band-ink:var(--oim-800);
+  --band-ink-2:rgba(4,55,45,.80);
+  --band-line:rgba(4,55,45,.16);
+  --band-strong:var(--oim-800);
+  --band-accent:var(--oim);
+  --band-panel:rgba(255,255,255,.62);
+  --band-panel-h:#ffffff;
+  --band-img-bg:rgba(4,55,45,.07);
   --band-on-bg:var(--oim);
   --band-on-ink:var(--on-oim);
-  --band-wm:var(--mint);
-  --band-wm-o:.075;
+  --band-wm:var(--oim-800);
+  --band-wm-o:.07;
+  --wm:var(--band-wm);--wm-o:var(--band-wm-o);
+  --oim-txt:var(--band-accent);--green-txt:var(--band-accent);
+  background:var(--band);color:var(--band-ink);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .band-mint{
+    --band:var(--f-500); --band-ink:#e7f1ec; --band-ink-2:rgba(231,241,236,.72);
+    --band-line:rgba(200,250,229,.20); --band-strong:#fff; --band-accent:var(--mint);
+    --band-panel:rgba(255,255,255,.07); --band-panel-h:rgba(255,255,255,.13);
+    --band-img-bg:rgba(0,0,0,.22); --band-wm:var(--mint); --band-wm-o:.075;
+    --surface:rgba(255,255,255,.07); --surface-2:rgba(255,255,255,.12);
+    --ink:var(--band-ink); --ink-2:var(--band-ink-2); --ink-3:rgba(231,241,236,.62);
+    --line:var(--band-line); --line-2:rgba(200,250,229,.30); --browny-txt:var(--band-ink-2);
   }
 }
-:root[data-theme="dark"] .band-sand{
-  --band:var(--s-page);
-  --band-ink:#e7f1ec;
-  --band-ink-2:rgba(231,241,236,.70);
-  --band-line:rgba(200,250,229,.20);
-  --band-strong:#ffffff;
-  --band-accent:var(--mint);
-  --band-panel:rgba(255,255,255,.07);
-  --band-panel-h:rgba(255,255,255,.13);
-  --band-img-bg:rgba(0,0,0,.2);
-  --band-on-bg:var(--oim);
-  --band-on-ink:var(--on-oim);
-  --band-wm:var(--mint);
-  --band-wm-o:.075;
+:root[data-theme="dark"] .band-mint{
+  --band:var(--f-500); --band-ink:#e7f1ec; --band-ink-2:rgba(231,241,236,.72);
+  --band-line:rgba(200,250,229,.20); --band-strong:#fff; --band-accent:var(--mint);
+  --band-panel:rgba(255,255,255,.07); --band-panel-h:rgba(255,255,255,.13);
+  --band-img-bg:rgba(0,0,0,.22); --band-wm:var(--mint); --band-wm-o:.075;
+    --surface:rgba(255,255,255,.07); --surface-2:rgba(255,255,255,.12);
+    --ink:var(--band-ink); --ink-2:var(--band-ink-2); --ink-3:rgba(231,241,236,.62);
+    --line:var(--band-line); --line-2:rgba(200,250,229,.30); --browny-txt:var(--band-ink-2);
 }
+
+/* --------------------------------------------- брэнд элемент: нуман хаалга
+   Гарын авлагын логоны ард давтагддаг хэлбэр (х.8, 11, 19). Хэсгийн
+   гүнийг мэдрүүлж, цулгай дэвсгэрийг эвддэг. */
+.arch{position:relative}
+.arch::before{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  left:50%;translate:-50% 0;top:clamp(-40px,-3vw,-18px);
+  width:min(820px,68vw);aspect-ratio:1/1.25;
+  border:1px solid currentColor;border-bottom:0;
+  border-radius:999px 999px 0 0;opacity:.13;
+}
+.arch-l::before{left:clamp(-120px,-6vw,-40px);translate:none;width:min(560px,46vw)}
+.arch-r::before{left:auto;right:clamp(-120px,-6vw,-40px);translate:none;width:min(560px,46vw)}
+
+/* --------------------------------------------- брэнд элемент: навчин хүрээ
+   assets/el-strip.svg — гарын авлагын хуудсын ирмэг дэх давтамжит хээ.
+   Зурвас солигдох зааг дээр тавина. */
+.el-strip{
+  position:relative;z-index:1;
+  display:block;width:100%;height:clamp(14px,1.7vw,22px);
+  background:currentColor;opacity:.42;pointer-events:none;
+  -webkit-mask:url(assets/el-strip.svg) repeat-x center/auto 100%;
+          mask:url(assets/el-strip.svg) repeat-x center/auto 100%;
+}
+.el-strip-t{margin-top:calc(-1 * clamp(64px,8vw,116px) + clamp(18px,2.2vw,30px));
+             margin-bottom:clamp(10px,1.4vw,18px)}
+.el-strip-b{margin-top:clamp(26px,3.4vw,46px)}
 
 /* ------------------------------------------------ trust */
 .trust{background:var(--band);color:var(--band-ink);padding:26px 0}
