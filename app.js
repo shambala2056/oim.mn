@@ -203,8 +203,8 @@
             '<span class="ctag ctag-level">' + ICON.level + esc(LEVEL_MN[p.care.level]) + '</span>' +
           '</div>' +
           '<div class="card-foot">' +
-            '<p class="card-price">' + fmt(p.price) + '₮<small>' +
-              (p.note ? esc(p.note) : 'савны үнэ тусдаа') + '</small></p>' +
+            '<p class="card-price">' + fmt(p.price) + '₮' +
+              (p.note ? '<small>' + esc(p.note) + '</small>' : '') + '</p>' +
             '<button class="add' + (inCart ? ' is-in' : '') + '" data-add="' + p.id + '" ' +
               'aria-label="' + esc(p.mn) + ' сагсанд нэмэх">' +
               '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>' +
