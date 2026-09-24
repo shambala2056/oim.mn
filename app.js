@@ -583,7 +583,7 @@
         '<div class="cart-sum"><span>Нийт дүн</span><b>' + fmt(total) + '₮</b></div>' +
         '<p class="cart-note">Үнэд савны үнэ, тээвэрлэлт ороогүй. Борлуулалтын менежер ' +
           'тантай холбогдож эцсийн үнийг баталгаажуулна.</p>' +
-        '<a class="btn btn-solid" href="mailto:oimsales11@gmail.com' +
+        '<a class="btn btn-solid" href="mailto:info@oimnogoonurlan.mn' +
           '?subject=' + encodeURIComponent('Ургамлын захиалга — oim.mn') +
           '&body=' + encodeURIComponent(body) + '">Захиалгын хүсэлт илгээх</a>' +
         '<a class="btn btn-ghost btn-sm" href="tel:+97677773310">Утсаар захиалах · 7777-3310</a>';
@@ -631,7 +631,7 @@
 
       '<a class="btn btn-solid' + (checkout.agreed ? '' : ' is-off') + '"' +
         (checkout.agreed
-          ? ' href="mailto:oimsales11@gmail.com?subject=' + encodeURIComponent('Түрээсийн хүсэлт — oim.mn') +
+          ? ' href="mailto:info@oimnogoonurlan.mn?subject=' + encodeURIComponent('Түрээсийн хүсэлт — oim.mn') +
             '&body=' + encodeURIComponent(rbody) + '"'
           : ' aria-disabled="true"') +
         '>Түрээсийн хүсэлт илгээх</a>' +
