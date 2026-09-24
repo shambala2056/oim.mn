@@ -419,7 +419,6 @@ svg:not(.glyph):not(.wordmark):not(.el-wm):not(.el-mark):not(.el-strip):not(.br-
   .svc-track [data-dupe]{display:none}
 }
 
-.rent-teaser{background:var(--ground-2)}
 .rent-two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,24px)}
 .rt-card{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:stretch;
@@ -995,7 +994,7 @@ svg,iframe,video{max-width:100%;height:auto;display:block}
 .pcard-cta{background:var(--oim);border-color:transparent;border-top-color:var(--oim-txt);color:var(--on-oim);justify-content:center;gap:12px}
 .pcard-cta>*{padding-inline:24px}
 .pcard-cta h3{padding-top:26px}
-.pcard-cta .pcard-d{color:#0A4638}
+.pcard-cta .pcard-d{color:rgba(255,255,255,.82)}
 .pcard-cta .btn{margin-top:8px;align-self:flex-start}
 
 /* ------------------------------------------------ rental: duration + tiers + calculator */
@@ -1110,7 +1109,6 @@ svg,iframe,video{max-width:100%;height:auto;display:block}
   .rshow figure:first-child{grid-column:span 2;aspect-ratio:16/9}
 }
 
-.rental{background:var(--ground-2)}
 
 
 .tables{display:flex;flex-direction:column;gap:clamp(20px,2.4vw,30px)}
