@@ -1263,19 +1263,6 @@ a.chain-i:hover b,a.chain-i:hover .chain-n{color:var(--oim-800)}
 .contact h2{font-size:clamp(30px,4vw,50px)}
 .contact-lede{margin-top:20px;max-width:44ch;color:var(--band-ink-2);font-size:16.5px}
 .contact-side{display:flex;flex-direction:column}
-.msg-cta{
-  display:flex;align-items:center;gap:14px;margin-bottom:22px;
-  padding:16px 20px;border-radius:var(--r-lg);
-  background:var(--oim);color:var(--on-oim);transition:transform .2s,box-shadow .2s;
-}
-.msg-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);background:var(--n-900);color:var(--mint)}
-.msg-cta:hover svg{fill:var(--mint)}
-.msg-cta:hover i{color:rgba(200,250,229,.78)}
-.msg-cta svg{width:34px;height:34px;flex:none;fill:var(--on-oim)}
-.msg-cta svg .bolt{fill:var(--mint)}
-.msg-cta span{display:flex;flex-direction:column;gap:2px}
-.msg-cta b{font-size:16px;font-weight:700;letter-spacing:-.015em}
-.msg-cta i{font-style:normal;font-size:12.5px;color:rgba(255,255,255,.78)}
 .contact-list{display:flex;flex-direction:column;gap:2px}
 /* Толгой бичгийн оронд дүрс тэмдэг — утас/имэйл/сошиал нь дүрсээрээ
    шууд танигдана. Дүрс нь чимэглэл тул aria-hidden, утгыг нь холбоосын
