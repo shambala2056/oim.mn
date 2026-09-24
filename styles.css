@@ -269,13 +269,38 @@ svg:not(.glyph):not(.wordmark):not(.el-wm):not(.el-mark):not(.el-strip){
 .masthead{position:sticky;top:0;z-index:60;background:var(--s-page)}
 .mast-nav{
   margin-inline:auto;
-  display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(12px,2.4vw,30px);
+  display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(10px,1.7vw,22px);
   font-family:var(--f-round);font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
 }
 .mast-nav a{color:rgba(227,234,230,.78);padding:4px 0;border-bottom:2px solid transparent;
   transition:color .18s,border-color .18s}
 .mast-nav a:hover,.mast-nav a.is-here{color:var(--oim-txt);border-color:var(--oim-txt)}
-@media(max-width:860px){
+
+/* --------------------------------------------- "Тун удахгүй" цэсний зүйл
+   Хараахан агуулгагүй хэсгүүд: харагдана, гэхдээ дарагдахгүй. Холбоос
+   биш <span> учир курсор ч, чиглүүлэлт ч үүсэхгүй. */
+.nav-soon{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 0;border-bottom:2px solid transparent;
+  color:rgba(227,234,230,.56);cursor:default;user-select:none;
+}
+.nav-soon i{
+  font-style:normal;font-size:8.5px;font-weight:800;letter-spacing:.06em;
+  padding:3px 6px;border-radius:999px;line-height:1;
+  color:var(--oim-800);background:var(--mint);white-space:nowrap;
+}
+.foot-nav .nav-soon{color:rgba(231,241,236,.56);border-bottom-width:1px}
+
+/* 1180–1400: бичигтэй тэмдэг багтахгүй тул цэг болгоно (title=Тун удахгүй) */
+@media(min-width:1261px) and (max-width:1400px){
+  .mast-nav .nav-soon i{
+    font-size:0;letter-spacing:0;padding:0;
+    width:7px;height:7px;border-radius:50%;
+  }
+}
+/* Цэс 8 зүйлтэй болсон тул хэвтээгээр багтахаа больсон: 1260px-с доош
+   бургерийн жагсаалт руу шилжинэ (эс тэгвээс хоёр мөр болж зурвас эвдэрнэ). */
+@media(max-width:1260px){
   .mast-burger{display:flex;order:-1}
   .mast-logo{margin:0 auto}
   .mast-band{flex-wrap:wrap}
@@ -285,6 +310,9 @@ svg:not(.glyph):not(.wordmark):not(.el-wm):not(.el-mark):not(.el-strip){
   }
   .mast-nav.is-open{display:flex}
   .mast-nav a{width:100%;padding:13px 0;border-bottom:1px solid rgba(0,95,77,.16)}
+  /* жагсаалт горимд бүтэн тэмдэг багтана */
+  .mast-nav .nav-soon{width:100%;padding:13px 0;justify-content:space-between;
+    border-bottom:1px solid rgba(0,95,77,.16)}
 }
 
 /* ------------------------------------------------ pages */
@@ -1101,6 +1129,7 @@ a.chain-i:hover b,a.chain-i:hover .chain-n{color:var(--oim-800)}
   font-family:var(--f-round);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 .foot-nav a{color:var(--band-ink-2);padding:4px 0;border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
 .foot-nav a:hover{color:var(--oim-txt);border-color:var(--oim-txt)}
+.foot-nav{gap:6px 18px}
 .foot-portal{display:inline-flex;align-items:center;gap:8px;padding:9px 17px;
   border:1px solid var(--band-line);border-radius:var(--r-pill);
   font-family:var(--f-round);font-size:12.5px;font-weight:700;color:var(--band-ink-2);
