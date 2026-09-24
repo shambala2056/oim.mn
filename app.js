@@ -821,6 +821,16 @@
 
   /* ---------------------------------------------- go */
   render();
+  /* ---------------------------------------------- салбарын газрын зураг
+     iframe эхэндээ pointer-events:none — утсан дээр хуудасны гүйлт
+     газрын зурагт баригдахаас сэргийлнэ. Товч дарж идэвхжүүлнэ. */
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('.br-tap') : null;
+    if (!t) return;
+    var box = t.closest('.br-map');
+    if (box) box.classList.add('is-live');
+  });
+
   show(routeName(), true);
   syncDot();
 })();
