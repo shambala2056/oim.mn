@@ -1651,21 +1651,13 @@ a.chain-i:hover b,a.chain-i:hover .chain-n{color:var(--oim-800)}
   display:block;position:absolute;inset:0;z-index:2;
 }
 
-/* ── Промо зурвас (нүүр хуудас) ── */
-.promo-in{
-  display:grid;gap:clamp(20px,4vw,48px);align-items:center;
-  grid-template-columns:minmax(0,340px) minmax(0,1fr);
-}
-.promo-fig{margin:0;border-radius:var(--r-lg);overflow:hidden;line-height:0;
-  box-shadow:0 18px 50px rgba(4,20,15,.38)}
-.promo-fig img{width:100%;height:auto;display:block}
-.promo-txt h2{margin:6px 0 0;line-height:1.14}
-.promo-sub{margin-top:14px;max-width:44ch}
-.promo-price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:18px}
-.promo-price s{opacity:.80;font-size:clamp(15px,1.6vw,18px)}
-.promo-price b{font-size:clamp(28px,3.6vw,42px);font-weight:800;letter-spacing:-.02em;
-  color:var(--band-accent,var(--mint))}
-.promo-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+/* ── Дэлгүүрийн багцын зурвас ────────────────────────────────
+   Толгойн доор шууд наалдана (margin алга) — хоёулаа нэг "hero"
+   мэт уншигдана. Өндөр нь auto тул зураг тайрагдахгүй, хажуугийн
+   зай ч үүсэхгүй. Ачаалахад үсрэхгүйн тулд width/height зааж өгсөн. */
+.shop-promo{display:block;line-height:0;background:#EEDCCD}
+.shop-promo img{width:100%;height:auto;display:block}
+.shop-promo:focus-visible{outline:3px solid var(--oim);outline-offset:-3px}
 
 /* ── Багц бүтээгдэхүүний хуудас ── */
 .bn-grid{
@@ -1704,8 +1696,6 @@ a.chain-i:hover b,a.chain-i:hover .chain-n{color:var(--oim-800)}
 
 /* ── Утас, таблет ── */
 @media (max-width:900px){
-  .promo-in{grid-template-columns:minmax(0,1fr)}
-  .promo-fig{max-width:380px}
   .bn-grid{grid-template-columns:minmax(0,1fr)}
   .bn-fig{max-width:480px}
 }
