@@ -1636,7 +1636,10 @@ a.chain-i:hover b,a.chain-i:hover .chain-n{color:var(--oim-800)}
      • hero-гийн бичиг арилна
    Бичгийг `display:none` биш `opacity:0` болгосон шалтгаан: hero-гийн
    өндөр нь доторх бичгээсээ гардаг тул хасвал зурвас агчих байсан. */
-.hero-bg-full{object-fit:contain;background:var(--bg-deep)}
+/* Хажуугийн зайг постерын ӨӨРИЙН дэвсгэр өнгөөр дүүргэнэ (#EEDCCD —
+   зургийн буланг хэмжиж авав). Ногооноор дүүргэвэл дулаан өнгөт
+   постерын хажууд хатуу ирмэг үүсэж, тайрсан мэт харагдана. */
+.hero-bg-full{object-fit:contain;background:#EEDCCD}
 .hero-veil,.hero-inner{transition:opacity .8s ease}
 .hero.is-poster .hero-veil{opacity:0}
 .hero.is-poster .hero-inner{opacity:0;pointer-events:none}
