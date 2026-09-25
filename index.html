@@ -452,16 +452,26 @@
 </div>
 
 <div class="view" data-view="shop" hidden>
-<header class="page-head"><div class="wrap"><p class="eyebrow"><svg class="el-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#el08"/></svg>Худалдаа</p><h1>Ургамлын каталог</h1></div></header>
-<!-- Дэлгүүрийн толгойн доорх багцын зурвас. Постер өөрөө гарчиг,
-     үнэтэй тул дээр нь өөр бичиг тавихгүй — давхцвал хоёулаа
-     уншигдахгүй. Бүтэн өргөнөөр, байгалийн харьцаагаараа гарна. -->
-<a class="shop-promo" href="#/bundles"
-   aria-label="Агаар цэвэршүүлэх тасалгааны цэцгийн багц, 5+5 урамшуулал, хямдралтай үнэ 197,000 төгрөг — дэлгэрэнгүй">
-  <img src="assets/bundle-wide.webp"
-       alt="Агаар цэвэршүүлэх тасалгааны цэцгийн багц — нөмөргөнө, уданбор, саваргана, мөнхрөө, долларын мод ба 5 ширхэг үрсэлгээ. Үндсэн үнэ 250,000₮, хямдралтай үнэ 197,000₮, УБ хот дотор хүргэлт үнэгүй."
-       loading="lazy" decoding="async" width="2560" height="1440">
-</a>
+<header class="page-head shop-head">
+  <!-- Дэвсгэр нь багцын постерын БИЧИГГҮЙ хэсэг (постерын өөрийн
+       гарчиг, үнэ зүүн талд байдаг тул тайрч авав) — эс бөгөөс
+       «Ургамлын каталог»-той давхцаж хоёулаа уншигдахгүй болно. -->
+  <img class="shop-head-bg" src="assets/shop-head.webp" alt="" fetchpriority="high" decoding="async">
+  <span class="shop-head-veil" aria-hidden="true"></span>
+  <div class="wrap shop-head-in">
+    <div class="shop-head-t">
+      <p class="eyebrow"><svg class="el-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#el08"/></svg>Худалдаа</p>
+      <h1>Ургамлын каталог</h1>
+    </div>
+    <a class="shop-head-promo" href="#/bundles">
+      <span class="shp-badge">5+5 урамшуулал</span>
+      <span class="shp-name">Агаар цэвэршүүлэх тасалгааны цэцгийн багц</span>
+      <span class="shp-price"><s>250,000₮</s><b>197,000₮</b></span>
+      <span class="shp-go">Дэлгэрэнгүй үзэх</span>
+    </a>
+  </div>
+</header>
+
 
 <!-- ============ SHOP ============ -->
 <section class="section shop shop-page" id="shop" aria-labelledby="shop-h">

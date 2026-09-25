@@ -1654,13 +1654,71 @@ a.chain-i:hover b,a.chain-i:hover .chain-n{color:var(--oim-800)}
   display:block;position:absolute;inset:0;z-index:2;
 }
 
-/* ── Дэлгүүрийн багцын зурвас ────────────────────────────────
-   Толгойн доор шууд наалдана (margin алга) — хоёулаа нэг "hero"
-   мэт уншигдана. Өндөр нь auto тул зураг тайрагдахгүй, хажуугийн
-   зай ч үүсэхгүй. Ачаалахад үсрэхгүйн тулд width/height зааж өгсөн. */
-.shop-promo{display:block;line-height:0;background:#EEDCCD}
-.shop-promo img{width:100%;height:auto;display:block}
-.shop-promo:focus-visible{outline:3px solid var(--oim);outline-offset:-3px}
+/* ── Дэлгүүрийн гарчиг = багцын промо hero ───────────────────
+   «Ургамлын каталог» гарчгийн дэвсгэр дээр промо байрлана.
+   Дэвсгэр зураг нь постерын БИЧИГГҮЙ хэсэг — постерын өөрийн
+   гарчиг, үнэ зүүн талд байдаг тул тайрч авсан. Эс бөгөөс хоёр
+   өөр гарчиг давхцана. */
+.shop-head{
+  position:relative;overflow:hidden;border-bottom:0;
+  padding:clamp(34px,4.6vw,58px) 0;
+  background:var(--oim-800);
+  --band-accent:var(--mint);
+}
+.shop-head-bg{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 62%;z-index:0;
+}
+/* Хөшиг: зүүн тал нь гарчгийн ард хамгийн гүн — цагаан бичиг
+   ногоон навчин дээр уншигдах ёстой. */
+.shop-head-veil{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(100deg, rgba(4,24,19,.93) 0%, rgba(4,24,19,.86) 30%,
+                            rgba(4,24,19,.48) 60%, rgba(4,24,19,.58) 100%),
+    linear-gradient(to top, rgba(4,24,19,.42), transparent 58%);
+}
+.shop-head-in{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(20px,3vw,44px);align-items:center;
+}
+.shop-head h1{color:#fff}
+.shop-head .eyebrow{color:var(--mint)}
+
+/* Промо хайрцаг — шилэн гадаргуу дээр */
+.shop-head-promo{
+  display:grid;gap:7px;justify-items:start;
+  padding:16px 20px;border-radius:var(--r-lg);
+  background:rgba(4,24,19,.62);border:1px solid rgba(200,250,229,.34);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  text-decoration:none;max-width:330px;
+  transition:border-color .2s,background .2s;
+}
+.shop-head-promo:hover{background:rgba(4,24,19,.74);border-color:var(--mint)}
+.shop-head-promo:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.shp-badge{
+  font-family:var(--f-round);font-size:11px;font-weight:800;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 10px;border-radius:999px;background:var(--mint);color:var(--oim-800);
+}
+.shp-name{font-size:14px;line-height:1.35;color:#fff;font-weight:600}
+.shp-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:2px}
+.shp-price s{font-size:13px;color:rgba(255,255,255,.80)}
+.shp-price b{font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--mint)}
+.shp-go{
+  font-family:var(--f-round);font-size:12.5px;font-weight:800;
+  color:var(--mint);border-bottom:1px solid rgba(200,250,229,.5);
+}
+
+@media (max-width:820px){
+  .shop-head-in{grid-template-columns:minmax(0,1fr);align-items:start}
+  .shop-head-promo{max-width:none;width:100%}
+  .shop-head-veil{
+    background:
+      linear-gradient(180deg, rgba(4,24,19,.90) 0%, rgba(4,24,19,.78) 45%, rgba(4,24,19,.92) 100%);
+  }
+}
 
 /* ── Багц бүтээгдэхүүний хуудас ── */
 .bn-grid{
