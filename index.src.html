@@ -453,21 +453,27 @@
 
 <div class="view" data-view="shop" hidden>
 <header class="page-head shop-head">
-  <!-- Дэвсгэр нь багцын постерын БИЧИГГҮЙ хэсэг (постерын өөрийн
-       гарчиг, үнэ зүүн талд байдаг тул тайрч авав) — эс бөгөөс
-       «Ургамлын каталог»-той давхцаж хоёулаа уншигдахгүй болно. -->
-  <img class="shop-head-bg" src="assets/shop-head.webp" alt="" fetchpriority="high" decoding="async">
-  <span class="shop-head-veil" aria-hidden="true"></span>
   <div class="wrap shop-head-in">
     <div class="shop-head-t">
       <p class="eyebrow"><svg class="el-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#el08"/></svg>Худалдаа</p>
       <h1>Ургамлын каталог</h1>
     </div>
+    <!-- Промо нь БҮТЭН ДЭВСГЭР зураг биш, ЖИЖИГ ЗУРАГТАЙ КАРТ.
+         Шалтгаан: толгойн зурвас өргөн боловч нам (≈5:1), харин
+         зураг бараг дөрвөлжин (1.14:1). Дэвсгэр болгон тавихад
+         `cover` нь зургийг 2.5 дахин томруулж, савны ирмэг л
+         харагдаад утгагүй ойртолт болж байв. Карт доторх зураг
+         жижигрэн багтдаг тул ямар ч өргөнд эвдрэхгүй. -->
     <a class="shop-head-promo" href="#/bundles">
-      <span class="shp-badge">5+5 урамшуулал</span>
-      <span class="shp-name">Агаар цэвэршүүлэх тасалгааны цэцгийн багц</span>
-      <span class="shp-price"><s>250,000₮</s><b>197,000₮</b></span>
-      <span class="shp-go">Дэлгэрэнгүй үзэх</span>
+      <span class="shp-img">
+        <img src="assets/shop-head.webp" alt="" loading="lazy" decoding="async" width="240" height="240">
+      </span>
+      <span class="shp-body">
+        <span class="shp-badge">5+5 урамшуулал</span>
+        <span class="shp-name">Агаар цэвэршүүлэх тасалгааны цэцгийн багц</span>
+        <span class="shp-price"><s>250,000₮</s><b>197,000₮</b></span>
+        <span class="shp-go">Дэлгэрэнгүй үзэх</span>
+      </span>
     </a>
   </div>
 </header>
