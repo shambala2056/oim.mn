@@ -127,22 +127,35 @@
        • таб далд байхад тоолуур зогсоно (дэмий ажиллахгүй)
      Эхний зураг HTML дотроо `is-on` тул JS унасан ч хоосон харагдахгүй. */
   (function heroLoop () {
-    var slides = Array.prototype.slice.call(
-      document.querySelectorAll('.hero .hero-bg'));
+    var hero = document.querySelector('.hero');
+    if (!hero) return;
+    var slides = Array.prototype.slice.call(hero.querySelectorAll('.hero-bg'));
     if (slides.length < 2) return;
 
     var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
     if (calm && calm.matches) return;
 
-    var i = 0, timer = null, HOLD = 6000;
+    /* Постер удаан барина — дээр нь үнэ, ургамлын нэр зэрэг уншихад
+       хугацаа шаардах бичиг байдаг. */
+    var i = 0, timer = null, HOLD = 6000, HOLD_POSTER = 9000;
+
+    function isPoster (el) { return el.hasAttribute('data-poster'); }
 
     function step () {
       slides[i].classList.remove('is-on');
       i = (i + 1) % slides.length;
-      slides[i].classList.add('is-on');
+      var now = slides[i];
+      now.classList.add('is-on');
+      /* Постер гарахад hero-гийн бичиг, хөшиг арилна (CSS дээр) */
+      hero.classList.toggle('is-poster', isPoster(now));
+      schedule();
     }
-    function start () { if (!timer) timer = setInterval(step, HOLD); }
-    function stop ()  { if (timer) { clearInterval(timer); timer = null; } }
+    function schedule () {
+      stop();
+      timer = setTimeout(step, isPoster(slides[i]) ? HOLD_POSTER : HOLD);
+    }
+    function start () { if (!timer) schedule(); }
+    function stop ()  { if (timer) { clearTimeout(timer); timer = null; } }
 
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) stop(); else start();

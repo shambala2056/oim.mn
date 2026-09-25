@@ -1623,6 +1623,26 @@ a.chain-i:hover b,a.chain-i:hover .chain-n{color:var(--oim-800)}
 .hero-bg{opacity:0;transition:opacity 1.1s ease}
 .hero-bg.is-on{opacity:1}
 
+/* ── Постер слайд: зураг БҮТНЭЭРЭЭ, бичиг алга ────────────────
+   Постер дээр өөрийн гарчиг, үнэ нь шатаастай тул hero-гийн бичигтэй
+   давхцвал хоёулаа уншигдахгүй. Тиймээс постер гарахад:
+     • object-fit:contain  → тайрахгүй, бүтнээрээ
+     • хөшиг (veil) арилна → зураг бүдгэрэхгүй
+     • hero-гийн бичиг арилна
+   Бичгийг `display:none` биш `opacity:0` болгосон шалтгаан: hero-гийн
+   өндөр нь доторх бичгээсээ гардаг тул хасвал зурвас агчих байсан. */
+.hero-bg-full{object-fit:contain;background:var(--bg-deep)}
+.hero-veil,.hero-inner{transition:opacity .8s ease}
+.hero.is-poster .hero-veil{opacity:0}
+.hero.is-poster .hero-inner{opacity:0;pointer-events:none}
+
+/* Постер идэвхтэй үед л дарагдана — эс бөгөөс үл үзэгдэх холбоос
+   hero-гийн товчнуудыг халхална. */
+.hero-poster-go{display:none}
+.hero.is-poster .hero-poster-go{
+  display:block;position:absolute;inset:0;z-index:2;
+}
+
 /* ── Промо зурвас (нүүр хуудас) ── */
 .promo-in{
   display:grid;gap:clamp(20px,4vw,48px);align-items:center;
