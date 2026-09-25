@@ -1266,8 +1266,11 @@ a.chain-i:hover b,a.chain-i:hover .chain-n{color:var(--oim-800)}
 /* ------------------------------------------------ contact */
 .contact{position:relative;background:var(--band);color:var(--band-ink);overflow:hidden}
 .fern-contact{width:min(430px,42vw);aspect-ratio:1/1;left:-7%;bottom:-20%;opacity:.15;color:var(--oim-txt);transform:rotate(16deg)}
-.contact-wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:start}
-.contact h2{font-size:clamp(30px,4vw,50px)}
+/* Гарчиг, тайлбарыг хассны дараа зүүн багана хоосон үлдэх тул
+   нэг багана болгов. Холбоо барих мөрүүд хэт сунахгүйн тулд
+   .contact-side-д уншигдах өргөнөөр хязгаар тавив. */
+.contact-wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(20px,3vw,32px);align-items:start}
+.contact-side{max-width:620px}
 .contact-lede{margin-top:20px;max-width:44ch;color:var(--band-ink-2);font-size:16.5px}
 .contact-side{display:flex;flex-direction:column}
 .contact-list{display:flex;flex-direction:column;gap:2px}
