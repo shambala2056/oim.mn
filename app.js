@@ -89,6 +89,7 @@
   var TITLES = {
     home:     'ОЙМ Ногоон Урлан',
     shop:     'Ургамлын каталог · ОЙМ',
+    bundles:  'Багц бүтээгдэхүүн · ОЙМ',
     care:     'Арчилгааны заавар · ОЙМ',
     services: 'Тохижилтын үнэ · ОЙМ',
     rental:   'Түрээсийн үнэ · ОЙМ',
@@ -118,6 +119,36 @@
   }
 
   window.addEventListener('hashchange', function () { show(routeName()); });
+
+  /* ---------------------------------------------- hero слайд
+     Нүүрний зураг зөөлөн солигдоно. Гурван болзол:
+       • хоёроос цөөн зурагтай бол огт ажиллахгүй
+       • хэрэглэгч хөдөлгөөн багасгахыг сонгосон бол зогсоно
+       • таб далд байхад тоолуур зогсоно (дэмий ажиллахгүй)
+     Эхний зураг HTML дотроо `is-on` тул JS унасан ч хоосон харагдахгүй. */
+  (function heroLoop () {
+    var slides = Array.prototype.slice.call(
+      document.querySelectorAll('.hero .hero-bg'));
+    if (slides.length < 2) return;
+
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (calm && calm.matches) return;
+
+    var i = 0, timer = null, HOLD = 6000;
+
+    function step () {
+      slides[i].classList.remove('is-on');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-on');
+    }
+    function start () { if (!timer) timer = setInterval(step, HOLD); }
+    function stop ()  { if (timer) { clearInterval(timer); timer = null; } }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else start();
+    });
+    start();
+  }());
 
   /* ---------------------------------------------- catalog state */
   var PRICE_BANDS = [
@@ -780,8 +811,28 @@
   });
 
   /* ---------------------------------------------- projects + clients */
-  document.getElementById('gal').innerHTML = PROJECTS.map(function (g) {
-    return '<figure><img src="' + src(g.file) + '" alt="' + esc(g.title) + '" loading="lazy"></figure>';
+  /* Галерейг ТӨРЛӨӨР нь бүлэглэнэ. Өмнө нь 30 зураг ялгаагүй нэг овоо
+     байсан тул аль нь ямар ажил болох нь ойлгогдохгүй байв. Бүлэг ба
+     гарчгийг projects.json дотор хадгална — зураг нэмэхэд код засахгүй. */
+  var GAL_GROUPS = [
+    { key:'feature', label:'Онцлох ажлууд',  hint:'Нэр бүхий байгууллагуудад гүйцэтгэсэн' },
+    { key:'live',    label:'Амьд ургамлан тохижилт', hint:'Оффис, худалдааны төв, тасалгаа' },
+    { key:'moss',    label:'Хиймэл ургамал, мосс',   hint:'Арчилгаа шаардахгүй шийдэл' },
+    { key:'event',   label:'Арга хэмжээний тохижилт', hint:'Ой, эвент, тайзны чимэглэл' }
+  ];
+
+  document.getElementById('gal').innerHTML = GAL_GROUPS.map(function (grp) {
+    var rows = PROJECTS.filter(function (g) { return g.group === grp.key; });
+    if (!rows.length) return '';
+    return '<h3 class="sub-h sub-h-light">' + esc(grp.label) +
+             ' <span>' + rows.length + ' ажил · ' + esc(grp.hint) + '</span></h3>' +
+           '<div class="gal">' + rows.map(function (g) {
+             return '<figure class="gal-i">' +
+                      '<span class="gal-ph"><img src="' + src(g.file) + '" alt="' +
+                        esc(g.title) + '" loading="lazy"></span>' +
+                      '<figcaption>' + esc(g.title) + '</figcaption>' +
+                    '</figure>';
+           }).join('') + '</div>';
   }).join('');
 
   var CLIENTS = JSON.parse(document.getElementById('clients-data').textContent);

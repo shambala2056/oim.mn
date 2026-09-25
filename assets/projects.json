@@ -1,1 +1,182 @@
-[{"file":"proj-00.webp","page":53,"title":"Амьд ургамал тохижилт"},{"file":"proj-01.webp","page":54,"title":"Амьд ургамлан шалны тохижилт"},{"file":"proj-02.webp","page":55,"title":"Амьд ургамал тохижилт"},{"file":"proj-03.webp","page":56,"title":"Хиймэл ургамал тохижилт"},{"file":"proj-04.webp","page":57,"title":"Хиймэл ургамал тохижилт"},{"file":"proj-05.webp","page":58,"title":"Хиймэл ургамал тохижилт"},{"file":"proj-06.webp","page":59,"title":"Хиймэл ургамал тохижилт"},{"file":"proj-07.webp","page":62,"title":"Дотоод хиймэл ургамал тохижилт"},{"file":"proj-08.webp","page":67,"title":"Онцлох тохижилт"},{"file":"proj-09.webp","page":68,"title":"Онцлох тохижилт"},{"file":"proj-10.webp","page":61,"title":"Дотоод хиймэл ургамал тохижилт"},{"file":"proj-11.webp","page":61,"title":"Дотоод хиймэл ургамал тохижилт"},{"file":"proj-12.webp","page":61,"title":"Дотоод хиймэл ургамал тохижилт"},{"file":"proj-13.webp","page":61,"title":"Дотоод хиймэл ургамал тохижилт"},{"file":"proj-14.webp","page":63,"title":"Дотоод амьд ургамал тохижилт"},{"file":"proj-15.webp","page":63,"title":"Дотоод амьд ургамал тохижилт"},{"file":"proj-16.webp","page":63,"title":"Дотоод амьд ургамал тохижилт"},{"file":"proj-17.webp","page":63,"title":"Дотоод амьд ургамал тохижилт"},{"file":"proj-18.webp","page":64,"title":"Дотоод амьд ургамал тохижилт"},{"file":"proj-19.webp","page":64,"title":"Дотоод амьд ургамал тохижилт"},{"file":"proj-20.webp","page":64,"title":"Дотоод амьд ургамал тохижилт"},{"file":"proj-21.webp","page":64,"title":"Дотоод амьд ургамал тохижилт"},{"file":"proj-22.webp","page":65,"title":"Арга хэмжээ / Эвент тохижилт"},{"file":"proj-23.webp","page":65,"title":"Арга хэмжээ / Эвент тохижилт"},{"file":"proj-24.webp","page":65,"title":"Арга хэмжээ / Эвент тохижилт"},{"file":"proj-25.webp","page":65,"title":"Арга хэмжээ / Эвент тохижилт"},{"file":"proj-26.webp","page":66,"title":"Арга хэмжээ / Эвент тохижилт"},{"file":"proj-27.webp","page":66,"title":"Арга хэмжээ / Эвент тохижилт"},{"file":"proj-28.webp","page":66,"title":"Арга хэмжээ / Эвент тохижилт"},{"file":"proj-29.webp","page":66,"title":"Арга хэмжээ / Эвент тохижилт"}]
+[
+ {
+  "file": "proj-00.webp",
+  "page": 53,
+  "title": "MAK — 30 жилийн ойн амьд ургамлан хана",
+  "group": "feature"
+ },
+ {
+  "file": "proj-01.webp",
+  "page": 54,
+  "title": "Оффисын угтах хэсгийн амьд ургамлан зохиомж",
+  "group": "live"
+ },
+ {
+  "file": "proj-02.webp",
+  "page": 55,
+  "title": "Амьд ургамлан жааз",
+  "group": "live"
+ },
+ {
+  "file": "proj-03.webp",
+  "page": 56,
+  "title": "Хиймэл ургамлан хана — үүдний хэсэг",
+  "group": "moss"
+ },
+ {
+  "file": "proj-04.webp",
+  "page": 57,
+  "title": "Мосс хана — дэлгэцийн ард",
+  "group": "moss"
+ },
+ {
+  "file": "proj-05.webp",
+  "page": 58,
+  "title": "Таазны цэцгэн чимэглэл",
+  "group": "event"
+ },
+ {
+  "file": "proj-06.webp",
+  "page": 59,
+  "title": "10 жилийн ойн мосс хана",
+  "group": "event"
+ },
+ {
+  "file": "proj-07.webp",
+  "page": 62,
+  "title": "Байгаль орчин, аялал жуулчлалын яам — Монгол орны мосс зураглал",
+  "group": "feature"
+ },
+ {
+  "file": "proj-08.webp",
+  "page": 67,
+  "title": "ILFIORE ресторан — амьд ургамлан хана",
+  "group": "feature"
+ },
+ {
+  "file": "proj-09.webp",
+  "page": 68,
+  "title": "ОЙМ салон — дотоод тохижилт",
+  "group": "feature"
+ },
+ {
+  "file": "proj-10.webp",
+  "page": 61,
+  "title": "Оффисын ногоон багана, зүлэг",
+  "group": "moss"
+ },
+ {
+  "file": "proj-11.webp",
+  "page": 61,
+  "title": "Угтах хэсгийн мосс хана",
+  "group": "moss"
+ },
+ {
+  "file": "proj-12.webp",
+  "page": 61,
+  "title": "Гоо сайхны салон — далавчит мосс хана",
+  "group": "moss"
+ },
+ {
+  "file": "proj-13.webp",
+  "page": 61,
+  "title": "RIVER — угтах танхимын ургамлан хана",
+  "group": "feature"
+ },
+ {
+  "file": "proj-14.webp",
+  "page": 63,
+  "title": "Цэцэглэдэг ургамлын зохиомж",
+  "group": "live"
+ },
+ {
+  "file": "proj-15.webp",
+  "page": 63,
+  "title": "Долларын мод — тасалгааны зохиомж",
+  "group": "live"
+ },
+ {
+  "file": "proj-16.webp",
+  "page": 63,
+  "title": "Худалдааны төвийн дотоод тохижилт",
+  "group": "live"
+ },
+ {
+  "file": "proj-17.webp",
+  "page": 63,
+  "title": "Оффисын төв танхимын мод",
+  "group": "live"
+ },
+ {
+  "file": "proj-18.webp",
+  "page": 64,
+  "title": "Мөнхрөө — оффисын тусгаарлагч",
+  "group": "live"
+ },
+ {
+  "file": "proj-19.webp",
+  "page": 64,
+  "title": "Ажлын ширээний урт саванд ургамал",
+  "group": "live"
+ },
+ {
+  "file": "proj-20.webp",
+  "page": 64,
+  "title": "Нөмөргөнө — модон саванд",
+  "group": "live"
+ },
+ {
+  "file": "proj-21.webp",
+  "page": 64,
+  "title": "Оффисын ажлын хэсгийн ургамал",
+  "group": "live"
+ },
+ {
+  "file": "proj-22.webp",
+  "page": 65,
+  "title": "Green Economy, Green Business — арга хэмжээний хана",
+  "group": "event"
+ },
+ {
+  "file": "proj-23.webp",
+  "page": 65,
+  "title": "Гадаа арга хэмжээний ургамлан хана",
+  "group": "event"
+ },
+ {
+  "file": "proj-24.webp",
+  "page": 65,
+  "title": "Намсрайн Ням-Осор — тайзны тохижилт",
+  "group": "event"
+ },
+ {
+  "file": "proj-25.webp",
+  "page": 65,
+  "title": "Тайлангийн арга хэмжээний ногоон хана",
+  "group": "event"
+ },
+ {
+  "file": "proj-26.webp",
+  "page": 66,
+  "title": "10 жилийн ойн мосс хана",
+  "group": "event"
+ },
+ {
+  "file": "proj-27.webp",
+  "page": 66,
+  "title": "Тайзны мосс зохиомж",
+  "group": "event"
+ },
+ {
+  "file": "proj-28.webp",
+  "page": 66,
+  "title": "Арга хэмжээний цэцгэн цагираг",
+  "group": "event"
+ },
+ {
+  "file": "proj-29.webp",
+  "page": 66,
+  "title": "Чуулганы тайзны тохижилт",
+  "group": "event"
+ }
+]

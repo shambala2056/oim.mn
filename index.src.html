@@ -54,7 +54,7 @@
         <a href="#/shop">Дэлгүүр<svg class="nav-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
         <div class="nav-sub">
           <span class="nav-soon" aria-disabled="true">Савны каталог<i>Тун удахгүй</i></span>
-          <span class="nav-soon" aria-disabled="true">Багц бүтээгдэхүүн<i>Тун удахгүй</i></span>
+          <a href="#/bundles">Багц бүтээгдэхүүн</a>
         </div>
       </div>
       <a href="#/care">Арчилгаа</a>
@@ -80,7 +80,8 @@
 <div class="view" data-view="home">
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <img class="hero-bg" src="assets/hero-fern.webp" alt="" fetchpriority="high">
+  <img class="hero-bg is-on" src="assets/hero-fern.webp" alt="" fetchpriority="high">
+  <img class="hero-bg" src="assets/hero-bundle.webp" alt="" loading="lazy" decoding="async">
   <span class="hero-veil" aria-hidden="true"></span>
   <div class="wrap hero-inner">
     <p class="eyebrow hero-eyebrow">ОЙМ Ногоон Урлан</p>
@@ -98,6 +99,25 @@
 </section>
 
 <!-- ============ ANNOUNCE ============ -->
+<section class="section promo band-forest" aria-labelledby="pr-h">
+  <div class="wrap promo-in">
+    <figure class="promo-fig">
+      <img src="assets/bundle-air.webp" alt="Агаар цэвэршүүлэх тасалгааны цэцгийн багц — 5 ургамал, 5 үрсэлгээ" loading="lazy" decoding="async">
+    </figure>
+    <div class="promo-txt">
+      <p class="eyebrow">Багц бүтээгдэхүүн</p>
+      <h2 id="pr-h">Агаар цэвэршүүлэх<br>тасалгааны цэцгийн багц</h2>
+      <p class="promo-sub">5 ширхэг том ургамал, 5 ширхэг үрсэлгээ, хөрс хамт.
+        Улаанбаатар хот дотор хүргэлт үнэгүй.</p>
+      <p class="promo-price"><s>250,000₮</s><b>197,000₮</b></p>
+      <div class="promo-cta">
+        <a class="btn btn-solid" href="#/bundles">Багцыг үзэх</a>
+        <a class="btn btn-onimg" href="tel:+97677773310">7777-3310</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 <!-- ============ CATEGORY TILES ============ -->
@@ -420,8 +440,8 @@
           <p class="br-addr">БЗД, 25-р хороо, Натурын гүүрний зүүн талд байрлах
             «UB Tower Plus» оффис, 1 давхар, 101 тоот</p>
           <div class="br-hrs"><svg class="br-clk" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/></svg><dl>
-            <div><dt>Даваа–Баасан</dt><dd>09:00–20:00</dd></div>
-            <div><dt>Бямба, Ням</dt><dd>10:00–18:00</dd></div>
+            <div><dt>Ажлын өдөр</dt><dd>10:00–19:00</dd></div>
+            <div><dt>Амралтын өдөр</dt><dd>11:00–19:00</dd></div>
           </dl></div>
           <div class="br-act">
             <a class="btn btn-solid btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=47.9123647,106.9318554" target="_blank" rel="noopener">
@@ -435,8 +455,8 @@
           <p class="br-addr">СБД, 3-р хороо, 5-р хороолол,
             Саруул худалдааны төвийн 1 давхарт</p>
           <div class="br-hrs"><svg class="br-clk" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/></svg><dl>
-            <div><dt>Даваа–Баасан</dt><dd>09:00–20:00</dd></div>
-            <div><dt>Бямба, Ням</dt><dd>10:00–20:00</dd></div>
+            <div><dt>Зуны цаг</dt><dd>09:00–20:00</dd></div>
+            <div><dt>Өвлийн цаг</dt><dd>09:00–19:00</dd></div>
           </dl></div>
           <div class="br-act">
             <a class="btn btn-solid btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=47.9094815,106.9034094" target="_blank" rel="noopener">
@@ -552,6 +572,53 @@
   </div>
 </section>
 
+
+</div>
+
+<div class="view" data-view="bundles" hidden>
+<header class="page-head"><div class="wrap"><p class="eyebrow"><svg class="el-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#el08"/></svg>Багц бүтээгдэхүүн</p><h1>Агаар цэвэршүүлэх тасалгааны цэцгийн багц</h1><p class="page-lede">Гэр, оффисын агаарыг цэвэршүүлэх таван ургамал, таван үрсэлгээ, хөрсний хамт. Улаанбаатар хот дотор хүргэлт үнэгүй.</p></div></header>
+
+<!-- ============ BUNDLES ============ -->
+<section class="section bundles band-mint arch" id="bundles" aria-labelledby="bn-h">
+  <svg class="el-wm el-wm-tr2" viewBox="0 0 100 100" aria-hidden="true"><use href="#el03"/></svg>
+  <svg class="el-wm el-wm-fl" viewBox="0 0 100 100" aria-hidden="true"><use href="#el07"/></svg>
+  <div class="wrap">
+    <div class="bn-grid">
+      <figure class="bn-fig">
+        <img src="assets/bundle-air.webp" alt="Багцад багтах ургамлууд: нөмөргөнө, уданбор, саваргана, мөнхрөө, долларын мод болон 5 ширхэг үрсэлгээ" loading="lazy" decoding="async">
+      </figure>
+
+      <div class="bn-body">
+        <p class="bn-badge">5+5 урамшуулал</p>
+        <h2 id="bn-h">Багцад юу багтах вэ</h2>
+
+        <ul class="bn-list">
+          <li><b>Нөмөргөнө</b><span>Spathiphyllum — цэцэглэдэг, сүүдэр тэсвэртэй</span></li>
+          <li><b>Уданбор</b><span>Өргөн навчтай, чийг дуртай</span></li>
+          <li><b>Саваргана</b><span>Улаан жимстэй, тод ногоон</span></li>
+          <li><b>Мөнхрөө</b><span>Sansevieria — шөнө хүчилтөрөгч ялгаруулна</span></li>
+          <li><b>Долларын мод</b><span>Zamioculcas — усалгаа бага шаардана</span></li>
+          <li><b>5 ширхэг үрсэлгээ</b><span>Тарьж ургуулах залуу суулгац</span></li>
+        </ul>
+
+        <p class="bn-extra">Хөрс болон сав багцад багтсан.</p>
+
+        <div class="bn-price">
+          <s>250,000₮</s>
+          <b>197,000₮</b>
+          <span>УБ хот дотор хүргэлт үнэгүй</span>
+        </div>
+
+        <div class="bn-cta">
+          <a class="btn btn-solid" href="tel:+97677773310">7777-3310 — захиалах</a>
+          <a class="btn btn-ghost" href="#/shop">Бүх ургамал үзэх</a>
+        </div>
+
+        <p class="bn-note">Урамшууллын үнэ. Ургамлын өндөр, сав, өнгө үзэмж зурагнаас бага зэрэг ялгаатай байж болно.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 </div>
 
@@ -959,8 +1026,7 @@
         <figcaption><b>UNICEF Mongolia</b><span>Арга хэмжээний тохижилт</span></figcaption>
       </figure>
     </div>
-    <h3 class="sub-h">Онцлох ажлууд <span>9 м өндөр амьд ургамлан хана, эвент тохижилт зэрэг</span></h3>
-    <div class="gal" id="gal"></div>
+    <div id="gal"></div>
   </div>
 </section>
 
@@ -1021,8 +1087,8 @@
           <p class="br-addr">БЗД, 25-р хороо, Натурын гүүрний зүүн талд байрлах
             «UB Tower Plus» оффис, 1 давхар, 101 тоот</p>
           <div class="br-hrs"><svg class="br-clk" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/></svg><dl>
-            <div><dt>Даваа–Баасан</dt><dd>09:00–20:00</dd></div>
-            <div><dt>Бямба, Ням</dt><dd>10:00–18:00</dd></div>
+            <div><dt>Ажлын өдөр</dt><dd>10:00–19:00</dd></div>
+            <div><dt>Амралтын өдөр</dt><dd>11:00–19:00</dd></div>
           </dl></div>
           <div class="br-act">
             <a class="btn btn-solid btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=47.9123647,106.9318554" target="_blank" rel="noopener">
@@ -1036,8 +1102,8 @@
           <p class="br-addr">СБД, 3-р хороо, 5-р хороолол,
             Саруул худалдааны төвийн 1 давхарт</p>
           <div class="br-hrs"><svg class="br-clk" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.2V12l3.2 2"/></svg><dl>
-            <div><dt>Даваа–Баасан</dt><dd>09:00–20:00</dd></div>
-            <div><dt>Бямба, Ням</dt><dd>10:00–20:00</dd></div>
+            <div><dt>Зуны цаг</dt><dd>09:00–20:00</dd></div>
+            <div><dt>Өвлийн цаг</dt><dd>09:00–19:00</dd></div>
           </dl></div>
           <div class="br-act">
             <a class="btn btn-solid btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=47.9094815,106.9034094" target="_blank" rel="noopener">
@@ -1067,7 +1133,7 @@
     </nav>
     <p class="foot-soon">
       <span class="nav-soon" aria-disabled="true">Савны каталог</span>
-      <span class="nav-soon" aria-disabled="true">Багц бүтээгдэхүүн</span>
+      <a href="#/bundles">Багц бүтээгдэхүүн</a>
       <i>Тун удахгүй</i>
     </p>
     <a class="foot-portal" data-portal>
