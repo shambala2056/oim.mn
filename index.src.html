@@ -81,9 +81,17 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <img class="hero-bg is-on" src="assets/hero-fern.webp" alt="" fetchpriority="high">
-  <img class="hero-bg hero-bg-full" data-poster src="assets/bundle-wide.webp"
-       alt="Агаар цэвэршүүлэх тасалгааны цэцгийн багц — 5 том ургамал, 5 үрсэлгээ, хямдралтай үнэ 197,000₮"
-       loading="lazy" decoding="async">
+  <!-- Нэг зураг хоёр хэлбэрт таарахгүй: hero нь утсан дээр БОСОО
+       (0.76:1), компьютерт ӨРГӨН (2.9:1). Хэвтээ постерыг утсанд
+       тавихад дээр/доор 57% хоосон зай үлдэж байв. Тиймээс утсанд
+       босоо хувилбарыг өгнө — түүний харьцаа (0.80:1) утасны
+       hero-той бараг тэнцүү тул зай үлдэхгүй. -->
+  <picture>
+    <source media="(max-width:760px)" srcset="assets/bundle-air.webp">
+    <img class="hero-bg hero-bg-full" data-poster src="assets/bundle-wide.webp"
+         alt="Агаар цэвэршүүлэх тасалгааны цэцгийн багц — 5 том ургамал, 5 үрсэлгээ, хямдралтай үнэ 197,000₮"
+         loading="lazy" decoding="async">
+  </picture>
   <span class="hero-veil" aria-hidden="true"></span>
   <a class="hero-poster-go" href="#/bundles" tabindex="-1" aria-hidden="true"></a>
   <div class="wrap hero-inner">
